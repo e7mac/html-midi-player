@@ -156,6 +156,7 @@ export class PlayerElement extends HTMLElement {
       if (this.src) {
         this.ns = null;
         this.ns = await mm.urlToNoteSequence(this.src);
+        this.ns = mm.sequences.applySustainControlChanges(this.ns);
       }
       this.currentTime = 0;
     }
